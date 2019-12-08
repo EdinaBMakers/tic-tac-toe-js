@@ -9,7 +9,7 @@ class Game {
   }
 
   claimField(index) {
-    this.board[index] = 'X';
+    this.board[index] = this.nextPlayer;
     this.nextPlayer = this.nextPlayer === 'X' ? 'O' : 'X';
   }
 }

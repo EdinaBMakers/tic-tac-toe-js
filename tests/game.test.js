@@ -37,7 +37,7 @@ describe('Game', () => {
     test('Any field can be claimed', () => {
       game.claimField(1);
 
-      expect(game.board).toStrictEqual([null, 'X', null, null, null, null, null, null, null])
+      expect(game.board).toStrictEqual([null, 'X', null, null, null, null, null, null, null]);
     });
 
     test('Claiming field is switching player', () => {
@@ -48,6 +48,13 @@ describe('Game', () => {
       game.claimField(1);
 
       expect(game.nextPlayer).toBe('X');
+    });
+
+    test('Claiming field is populating board correctly', () => {
+      game.claimField(0);
+      game.claimField(1);
+
+      expect(game.board).toStrictEqual(['X', 'O', null, null, null, null, null, null, null]);
     });
   });
 });
