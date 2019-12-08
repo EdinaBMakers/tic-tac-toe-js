@@ -56,5 +56,22 @@ describe('Game', () => {
 
       expect(game.board).toStrictEqual(['X', 'O', null, null, null, null, null, null, null]);
     });
+
+    test('It does not change the player when claiming non empty field', () => {
+      game.claimField(0);
+
+      expect(game.nextPlayer).toBe('O');
+
+      game.claimField(0);
+
+      expect(game.nextPlayer).toBe('O');
+    });
+
+    test('It does not change the board when claiming non empty field', () => {
+      game.claimField(0);
+      game.claimField(0);
+
+      expect(game.board).toStrictEqual(['X', null, null, null, null, null, null, null, null]);
+    });
   });
 });

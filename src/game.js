@@ -9,8 +9,10 @@ class Game {
   }
 
   claimField(index) {
-    this.board[index] = this.nextPlayer;
-    this._switchPlayer();
+    if (this.board[index] == null) {
+      this.board[index] = this.nextPlayer;
+      this._switchPlayer();
+    }
   }
 
   _switchPlayer() {
