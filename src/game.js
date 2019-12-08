@@ -10,6 +10,10 @@ class Game {
 
   claimField(index) {
     this.board[index] = this.nextPlayer;
+    this._switchPlayer();
+  }
+
+  _switchPlayer() {
     this.nextPlayer = this.nextPlayer === 'X' ? 'O' : 'X';
   }
 }
