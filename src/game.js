@@ -9,7 +9,7 @@ class Game {
   }
 
   claimField(index) {
-    if (this.board[index] == null) {
+    if (this._isEmpty(index)) {
       this.board[index] = this.nextPlayer;
       this._switchPlayer();
     }
@@ -17,6 +17,10 @@ class Game {
 
   _switchPlayer() {
     this.nextPlayer = this.nextPlayer === 'X' ? 'O' : 'X';
+  }
+
+  _isEmpty(index) {
+    return this.board[index] == null;
   }
 }
 
