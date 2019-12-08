@@ -26,4 +26,18 @@ describe('Game', () => {
       expect(game.board).toStrictEqual([null, null, null, null, null, null, null, null, null]);
     });
   });
+
+  describe('Claim field', () => {
+    test('A field can be claimed', () => {
+      game.claimField(0);
+
+      expect(game.board).toStrictEqual(['X', null, null, null, null, null, null, null, null])
+    });
+
+    test('Any field can be claimed', () => {
+      game.claimField(1);
+
+      expect(game.board).toStrictEqual([null, 'X', null, null, null, null, null, null, null])
+    });
+  });
 });
