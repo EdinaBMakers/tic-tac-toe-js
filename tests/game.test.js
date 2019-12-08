@@ -10,6 +10,12 @@ describe('Game', () => {
       expect(game.isOver).toBe(false);
     });
 
+    test('Game does not have a winner by default', () => {
+      const game = new Game();
+
+      expect(game.winner).toBe(null);
+    });
+
     test('X is the first player', () => {
       const game = new Game();
 
