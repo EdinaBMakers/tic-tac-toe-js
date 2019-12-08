@@ -9,5 +9,11 @@ describe('Game', () => {
 
       expect(game.isOver).toBe(false);
     });
+
+    test('X is the first player', () => {
+      const game = new Game();
+
+      expect(game.nextPlayer).toBe('X');
+    });
   });
 });
