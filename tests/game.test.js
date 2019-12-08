@@ -21,5 +21,11 @@ describe('Game', () => {
 
       expect(game.nextPlayer).toBe('X');
     });
+
+    test('Board is empty by default', () => {
+      const game = new Game();
+
+      expect(game.board).toStrictEqual([null, null, null, null, null, null, null, null, null]);
+    });
   });
 });
