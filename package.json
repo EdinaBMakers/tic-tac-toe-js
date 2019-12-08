@@ -1,0 +1,22 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "description": "The business logic for a game of tic tac toe written in JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdinaBMakers/tic-tac-toe-js.git"
+  },
+  "author": "Edina Bolkeny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdinaBMakers/tic-tac-toe-js/issues"
+  },
+  "homepage": "https://github.com/EdinaBMakers/tic-tac-toe-js#readme",
+  "devDependencies": {
+    "jest": "^24.9.0"
+  }
+}
