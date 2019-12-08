@@ -39,5 +39,15 @@ describe('Game', () => {
 
       expect(game.board).toStrictEqual([null, 'X', null, null, null, null, null, null, null])
     });
+
+    test('Claiming field is switching player', () => {
+      game.claimField(0);
+
+      expect(game.nextPlayer).toBe('O');
+
+      game.claimField(1);
+
+      expect(game.nextPlayer).toBe('X');
+    });
   });
 });
