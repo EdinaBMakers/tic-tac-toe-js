@@ -89,5 +89,15 @@ describe('Game', () => {
 
       expect(game.isOver).toBe(true);
     });
+
+    test('Game is over if it has a winner', () => {
+      game.claimField(0);
+      game.claimField(3);
+      game.claimField(1);
+      game.claimField(4);
+      game.claimField(2);
+
+      expect(game.isOver).toBe(true);
+    });
   });
 });
