@@ -14,13 +14,9 @@ class Game {
       this._switchPlayer();
     }
 
-    for (let i = 0; i < this.board.length; i++) {
-      if (this._isEmpty(i)) {
-        return;
-      }
+    if (!this._hasEmptyField()) {
+      this.isOver = true;
     }
-
-    this.isOver = true;
   }
 
   _switchPlayer() {
@@ -29,6 +25,16 @@ class Game {
 
   _isEmpty(index) {
     return this.board[index] == null;
+  }
+
+  _hasEmptyField() {
+    for (let i = 0; i < this.board.length; i++) {
+      if (this._isEmpty(i)) {
+        return true;
+      }
+    }
+
+    return false;
   }
 }
 
