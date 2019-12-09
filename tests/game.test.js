@@ -73,6 +73,21 @@ describe('Game', () => {
 
       expect(game.board).toStrictEqual(['X', null, null, null, null, null, null, null, null]);
     });
+
+    test('It cannot claim a field if game is over', () => {
+      game.claimField(0);
+      game.claimField(3);
+      game.claimField(1);
+      game.claimField(4);
+      game.claimField(2);
+
+      expect(game.board).toStrictEqual(['X', 'X', 'X', 'O', 'O', null, null, null, null]);
+      expect(game.isOver).toBe(true)
+
+      game.claimField(5);
+
+      expect(game.board).toStrictEqual(['X', 'X', 'X', 'O', 'O', null, null, null, null]);
+    });
   });
 
   describe('Game over', () => {

@@ -9,6 +9,8 @@ class Game {
   }
 
   claimField(index) {
+    if (this.isOver) { return; }
+    
     if (this._isEmpty(index)) {
       this.board[index] = this.nextPlayer;
       this._switchPlayer();
