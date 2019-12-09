@@ -13,6 +13,14 @@ class Game {
       this.board[index] = this.nextPlayer;
       this._switchPlayer();
     }
+
+    for (let i = 0; i < this.board.length; i++) {
+      if (this._isEmpty(i)) {
+        return;
+      }
+    }
+
+    this.isOver = true;
   }
 
   _switchPlayer() {
